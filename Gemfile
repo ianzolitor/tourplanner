@@ -13,3 +13,5 @@ gem 'json'
 gem 'racksh'
 
 gem 'sinatra-flash'
+
+gem 'google_places'

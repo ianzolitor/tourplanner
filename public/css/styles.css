@@ -1,4 +1,11 @@
+#map {
+  margin: 0 auto;
+  width: 80vw;
+  height: 60vh;
+  background-color: grey; }
+
 body {
+  text-align: center;
   background-color: teal; }
 
 /*# sourceMappingURL=styles.css.map */
