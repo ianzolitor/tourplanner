@@ -1,11 +1,15 @@
 #map {
   margin: 0 auto;
-  width: 80vw;
-  height: 60vh;
+  width: 90vw;
+  height: 50vw;
   background-color: grey; }
 
 body {
+  font-family: "futura";
   text-align: center;
-  background-color: teal; }
+  background-color: rgba(166, 194, 210, 0.29); }
+
+.finalize-stop-div {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -39,6 +39,12 @@ get '/new_stop' do
   erb :new_stop
 end
 
+post 'new_stop' do
+
+
+end
+
+
 get '/stop_venue' do
 @client = GooglePlaces::Client.new("AIzaSyA7nROtWpyUv9Oijht-WhWjxDfXcbmj2C4")
 venues =  @client.spots_by_query(params[:query])
@@ -48,6 +54,7 @@ venues.to_json
 
 end
 
+
 get '/stop_lodging' do
   p params
   @client = GooglePlaces::Client.new("AIzaSyA7nROtWpyUv9Oijht-WhWjxDfXcbmj2C4")
@@ -55,6 +62,23 @@ get '/stop_lodging' do
 
   lodging.to_json
 
-
-
 end
+
+get '/venue_info' do
+  @client = GooglePlaces::Client.new("AIzaSyA7nROtWpyUv9Oijht-WhWjxDfXcbmj2C4")
+  @spot = @client.spot(params[:query])
+  @spot.to_json
+end
+
+get '/lodging_info' do
+  @client = GooglePlaces::Client.new("AIzaSyA7nROtWpyUv9Oijht-WhWjxDfXcbmj2C4")
+  @spot = @client.spot(params[:query])
+  @spot.to_json
+end
+
+
+
+
+
+
+#
