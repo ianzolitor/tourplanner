@@ -1,4 +1,47 @@
+#map {
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vw;
+  background-color: grey; }
+
 body {
-  background-color: teal; }
+  font-family: "futura";
+  text-align: center;
+  background-color: rgba(166, 194, 210, 0.29); }
+
+.finalize-stop-div {
+  display: none; }
+
+.budget-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid black; }
+
+.budget-line {
+  display: block;
+  text-align: justify; }
+
+.budget {
+  display: block;
+  border: 1px solid black; }
+
+.budget-city {
+  font-weight: bolder; }
+
+.budget-pay {
+  text-align: right; }
+
+.budget-cost {
+  color: red;
+  text-align: right;
+  border-bottom: 2px solid black; }
+
+.line-total {
+  text-align: right; }
+
+#budget-total {
+  text-align: right;
+  font-size: 28px; }
 
 /*# sourceMappingURL=styles.css.map */
