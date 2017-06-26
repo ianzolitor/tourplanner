@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624201813) do
+ActiveRecord::Schema.define(version: 20170622153106) do
 
   create_table "lodgings", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "phone"
     t.string "website"
+    t.float "cost"
     t.float "lat"
     t.float "lng"
-    t.float "cost"
   end
 
   create_table "stops", force: :cascade do |t|
+    t.string "city"
     t.integer "venue_id"
     t.integer "lodging_id"
     t.integer "tour_id"
-    t.string "city"
   end
 
   create_table "tours", force: :cascade do |t|
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20170624201813) do
     t.string "address"
     t.string "phone"
     t.string "website"
+    t.float "pay"
     t.float "lat"
     t.float "lng"
-    t.float "pay"
   end
 
 end

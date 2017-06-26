@@ -48,6 +48,7 @@ end
 get '/tour/:id' do
   @tour=Tour.find(params[:id])
   erb :tour
+
 end
 
 post '/new-tour' do
@@ -71,7 +72,7 @@ post '/tour/:id/new_stop' do
 
   Stop.create(venue_id:Venue.last.id, lodging_id:Lodging.last.id, tour_id:params[:id], city:params[:stop_city])
 
-  redirect "/tour/:id"
+
 end
 
 

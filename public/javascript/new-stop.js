@@ -132,8 +132,6 @@ console.log(venues);
             }
 
           })
-
-
       }
     }
 

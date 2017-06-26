@@ -24,7 +24,13 @@
   </div>
 </div>
 
-<div class="venue-locations">
+
+<div class="map-venue-name" style= "display:none">
+<%= Venue.find(stop.venue_id).name %>
+
+</div>
+<div class="venue-locations" style= "display:none">
+
 <%= Venue.find(stop.venue_id).lat %>, <%= Venue.find(stop.venue_id).lng %>
 
 
@@ -40,8 +46,19 @@
 <br>
 <br>
 
-<h3>Budget Stuff</h3>
+<h3>Tour Budget</h3>
+<div class="budget-container">
+<% @tour.stops.each do |stop| %>
+<div class="budget-line">
+  <div class="budget budget-city"> <%= stop.city %> </div>
+  <div class="budget budget-pay"><%=Venue.find(stop.venue_id).pay %> </div>
+  <div class="budget budget-cost">-<%=Lodging.find(stop.lodging_id).cost %> </div>
+  <div class="budget line-total"><%= @line_total %></div>
 
+</div>
+<% end %>
+<div id="budget-total"></div>
+</div>
 
 
 
