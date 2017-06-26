@@ -3,3 +3,4 @@ css/
 .DS_Store
 Gemfile.lock
 db/migrate/schema.rb
+sinatraapi.sqlite3
