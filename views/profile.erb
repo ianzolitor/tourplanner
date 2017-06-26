@@ -1,17 +1,26 @@
-<h2>My Tours</h2>
+<h2> <%= @current_user.username %>'s Tours</h2>
+
+<div class="user-tours">
 
 
 <!-- Previous Tours/ Active Tours-->
-<button type="button" name="button">Tour 1</button>
+<% @current_user.tours.all.each do |tour| %>
 
-<button type="button" name="button">Tour 2</button>
+<div>
+  <a href="/tour/<%=tour.id%>"<button type="button" id = "tour-select" value= "<%= tour.name %>"> <%= tour.name %></button></a>
+</div>
 
-<button type="button" name="button">Tour 3</button>
+
+
+<% end %>
+
+</div>
+
 
 
 <h2>Create A New Tour!</h2>
 
 <form class="new-tour" action="new-tour" method="post">
-  <input type="text" name="new-tour-name" placeholder="New Tour Name">
+  <input type="text" name="tour_name" placeholder="New Tour Name">
   <input type="submit">
 </form>

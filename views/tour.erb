@@ -1,4 +1,4 @@
-<h2>(Tour Name)</h2>
+<h2> <%= @tour.name %> </h2>
 
 <div id="map"></div>
 
@@ -7,23 +7,43 @@
 
 
 <h3>Add A Stop</h3>
-<form class="new stop" action="/new_stop" method="get">
+<form class="new stop" action="/tour/<%=@tour.id %>/new_stop" method="get">
   <input type="submit" value="New Stop">
 </form>
 
 
-
-
-<button type="button" name="button">Stop 1</button>
-<button type="button" name="button">Stop 2</button>
-<button type="button" name="button">Stop 3</button>
+<% @tour.stops.each do |stop| %>
 
 
 
- 
+<div>
+  <button type="button" class = "stop-select" value= "<%= stop.id %>"> <%= stop.city %></button>
+  <div class="stop-info" style= "display:none">
+    <div>Playing at <a href="<%= Venue.find(stop.venue_id).website %>" target="_blank"><%=Venue.find(stop.venue_id).name %> </a> for $<%=Venue.find(stop.venue_id).pay %></div>
+    <div>Staying at <a href=" <%= Lodging.find(stop.lodging_id).website %> " target="_blank"> <%=Lodging.find(stop.lodging_id).name %></a> costing $<%=Lodging.find(stop.lodging_id).cost %> a night </div>
+  </div>
+</div>
+
+<div class="venue-locations">
+<%= Venue.find(stop.venue_id).lat %>, <%= Venue.find(stop.venue_id).lng %>
+
+
+
+</div>
+
+
+<% end %>
 
 
 
 
+<br>
+<br>
 
 <h3>Budget Stuff</h3>
+
+
+
+
+
+<script type="text/javascript" src="/javascript/tour.js"></script>

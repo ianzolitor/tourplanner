@@ -10,6 +10,28 @@ set :sessions, true
 
 require './models'
 
+before do
+  @current_user = User.find(session[:user_id]) if session[:user_id]
+
+end
+
+post '/' do
+  User.create(username: params[:username],password: params[:password])
+  user = User.where(username: params[:username]).first
+  session[:user_id] = user.id
+  redirect '/profile'
+end
+
+post '/signin' do
+  @user = User.where(username: params[:username]).first
+    if @user.password == params[:password]
+      flash[:notice]= "Successfully Signed In"
+      session[:user_id] = @user.id
+      redirect '/profile'
+    else
+      redirect '/signin'
+    end
+end
 
 get '/' do
 
@@ -23,25 +45,33 @@ get '/profile' do
   erb :profile
 end
 
-get '/tour' do
-
+get '/tour/:id' do
+  @tour=Tour.find(params[:id])
   erb :tour
 end
 
 post '/new-tour' do
+  Tour.create(name: params[:tour_name], user_id: @current_user.id)
 
-  redirect :tour
+  @tour=Tour.last
+  redirect "/tour/#{@tour.id}"
 end
 
 
-get '/new_stop' do
-
+get '/tour/:id/new_stop' do
+  @tour=Tour.find(params[:id])
   erb :new_stop
 end
 
-post 'new_stop' do
+post '/tour/:id/new_stop' do
 
+  Venue.create(name: params[:venue_name], address: params[:venue_address], lat: params[:venue_lat], lng: params[:venue_lng], pay: params[:venue_pay])
 
+  Lodging.create(name: params[:lodging_name], address: params[:lodging_address], lat: params[:lodging_lat], lng: params[:lodging_lng], cost: params[:lodging_cost])
+
+  Stop.create(venue_id:Venue.last.id, lodging_id:Lodging.last.id, tour_id:params[:id], city:params[:stop_city])
+
+  redirect "/tour/:id"
 end
 
 

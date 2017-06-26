@@ -1,4 +1,4 @@
-<h2>New Stop on ____ Tour</h2>
+<h2>New Stop on <%=@tour.name %></h2>
 
 
 
@@ -7,15 +7,24 @@
   <h2>Finalize Your Stop</h2>
 
 
-  <form class="finalize-stop-form" action="new_stop" method="post">
-    <div class="finalize-venue"></div>
-    <div class="finalize-lodging"></div>
+  <form class="finalize-stop-form" action="/tour/<%= @tour.id %>/new_stop" method="post">
+    <div class="finalize-venue">
+
+      <div><input type="text" id="venue-pay" placeholder="How Much They Paying?"></div>
+
+    </div>
+    <div class="finalize-lodging">
+
+      <div><input type="text" id="lodging-cost" placeholder="How Much Per Night?"></div>
+
+    </div>
     <input type="button" id="finalize-stop-button" value="Add Stop">
   </form>
 </div>
 
+<div style= "display:none" id="tour_id"><%=@tour.id %></div>
 
-<!-- Change this form to an input with button. Button onClick searches City for venues -->
+
 <input type="text" id="stop_venue" placeholder="Enter A City, State">
 <button type="button" id="stop_venue_submit">Search For Venues</button>
 <div class="venue-results"></div>
@@ -25,6 +34,10 @@
 <div class="lodging"></div>
 <div class="lodging-results"></div>
 
+
+
+
+<script type="text/javascript" src="/javascript/new-stop.js"></script>
 
 
 
