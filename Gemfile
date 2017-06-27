@@ -4,8 +4,6 @@ gem 'sinatra'
 
 gem 'sinatra-activerecord'
 
-gem 'sqlite3'
-
 gem 'rake'
 
 gem 'json'
@@ -15,3 +13,16 @@ gem 'racksh'
 gem 'sinatra-flash'
 
 gem 'google_places'
+
+group :production do
+
+gem 'pg'
+
+end
+
+
+group :development do
+
+gem 'sqlite3'
+
+end
