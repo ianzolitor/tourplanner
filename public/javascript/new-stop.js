@@ -111,6 +111,7 @@ console.log(venues);
     for (let i = 0; i < venueButton.length; i++) {
       venueButton[i].addEventListener("click", venueInfo)
       function venueInfo() {
+
         console.log(venueResponse[i]);
         $.ajax({
           url:"/venue_info",
@@ -126,8 +127,15 @@ console.log(venues);
               function populateMoreVenueInfo(venue) {
                 var venueInfo = document.createElement("div")
 
+
                 venueInfo.innerHTML = "<div>" + venue.name + "</div><div>" + venue.formatted_phone_number + "</div><div>" + venue.formatted_address + "</div><div><a href="+venue.website +" target='_blank'>"+venue.website +"</a></div>"
                 venueButton[i].parentNode.append(venueInfo);
+
+                // venueButton[i].addEventListener("click", closeVenueInfo)
+                // function closeVenueInfo() {
+                //   venueInfo.style.display="none"
+                // }
+
               }
             }
 

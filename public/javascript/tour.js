@@ -28,11 +28,14 @@ function budget() {
 
 for (let i = 0; i < stopSelect.length; i++) {
   stopSelect[i].addEventListener("click",displayStopInfo)
-
   function displayStopInfo() {
     var stopInfo = document.getElementsByClassName("stop-info");
-
+    if (stopInfo[i].style.display==="none"){
     stopInfo[i].style.display="block"
+    }
+    else {
+      stopInfo[i].style.display="none"
+    }
   }
 }
 
