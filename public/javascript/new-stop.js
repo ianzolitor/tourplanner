@@ -27,7 +27,7 @@ stopVenueSubmit.addEventListener("click", searchVenue)
 function searchVenue() {
 
   $.ajax({
-    url: "/stop_venue",
+    url: "https://tourplanneriz.herokuapp.com/stop_venue",
     method: "GET",
     data: {
       query: "music venue in " + stopVenue.value
@@ -92,7 +92,7 @@ console.log(venues);
   function searchLodging() {
 
     $.ajax({
-      url: "/stop_lodging",
+      url: "https://tourplanneriz.herokuapp.com/stop_lodging",
       method: "GET",
       data: {
         query: stopLodging.value + " in " + stopVenue.value
@@ -114,7 +114,7 @@ console.log(venues);
 
         console.log(venueResponse[i]);
         $.ajax({
-          url:"/venue_info",
+          url:"https://tourplanneriz.herokuapp.com/venue_info",
           method: "GET",
           data: {
             query: venueResponse[i].id
@@ -178,7 +178,7 @@ function populateLodgings(lodgings) {
     function lodgingInfo() {
       console.log(lodgingResponse[i]);
       $.ajax({
-        url:"/lodging_info",
+        url:"https://tourplanneriz.herokuapp.com/lodging_info",
         method: "GET",
         data: {
           query: lodgingResponse[i].id
@@ -208,7 +208,7 @@ function finalizeStop() {
   console.log(chosenVenue.name,chosenlodging.name);
 
   $.ajax({
-    url:"/tour/"+ tourId +"/new_stop",
+    url:"https://tourplanneriz.herokuapp.com/tour/"+ tourId +"/new_stop",
     method:"POST",
     data: {
         venue_name: chosenVenue.name,
