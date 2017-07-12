@@ -1,15 +1,23 @@
-<h2>Sign Up</h2>
-<h2>Choose a Username and Password!</h2>
+<h1>Tour Planner</h1>
 
-<form class="signup-form" action="/" method="post">
-  <input type="text" name="username" placeholder="Username">
-  <input type="text" name="password" placeholder="Password">
-  <input type="submit">
-</form>
-<div></div>
-<h2>Already a member?</h2>
-<form class="signin-form" action="/signin" method="post">
-  <input type="text" name="username" placeholder="Username">
-  <input type="text" name="password" placeholder="Password">
-  <input type="submit">
-</form>
+<div class="signin">
+  <h2>Sign In</h2>
+  <form class="signin-form" action="/signin" method="post">
+    <input type="text" name="username" placeholder="Username">
+    <input type="text" name="password" placeholder="Password">
+    <input type="submit">
+  </form>
+</div>
+<br>
+
+
+<div class="signup">
+
+  <h2>Or Create A New Profile</h2>
+
+  <form class="signup-form" action="/" method="post">
+    <input type="text" name="username" placeholder="Username">
+    <input type="text" name="password" placeholder="Password">
+    <input type="submit">
+  </form>
+</div>

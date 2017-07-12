@@ -7,37 +7,6 @@ var budgetTotal = document.getElementById("budget-total")
 var mapVenueName = document.getElementsByClassName("map-venue-name")
 
 
-budget()
-function budget() {
-
-  for (var i = 0; i < budgetCost.length; i++) {
-    var total= parseFloat(budgetPay[i].innerHTML) + parseFloat(budgetCost[i].innerHTML)
-    if (i>0){
-      let j = i-1
-    lineTotal[i].innerHTML  =  (total + parseFloat(lineTotal[j].innerHTML)).toFixed(2)
-  }
-    else{
-      lineTotal[i].innerHTML  += total.toFixed(2)
-    }
-
-    grandTotal = parseFloat(lineTotal[i].innerHTML)
-    budgetTotal.innerHTML = "$" + grandTotal.toFixed(2)
-    // budgetTotal.innerHTML
-  }
-}
-
-for (let i = 0; i < stopSelect.length; i++) {
-  stopSelect[i].addEventListener("click",displayStopInfo)
-  function displayStopInfo() {
-    var stopInfo = document.getElementsByClassName("stop-info");
-    if (stopInfo[i].style.display==="none"){
-    stopInfo[i].style.display="block"
-    }
-    else {
-      stopInfo[i].style.display="none"
-    }
-  }
-}
 
 var map;
 function initMap() {
@@ -71,6 +40,38 @@ function initMap() {
              });
 
         }
+}
+
+budget()
+function budget() {
+
+  for (var i = 0; i < budgetCost.length; i++) {
+    var total= parseFloat(budgetPay[i].innerHTML) + parseFloat(budgetCost[i].innerHTML)
+    if (i>0){
+      let j = i-1
+    lineTotal[i].innerHTML  =  (total + parseFloat(lineTotal[j].innerHTML)).toFixed(2)
+  }
+    else{
+      lineTotal[i].innerHTML  += total.toFixed(2)
+    }
+
+    grandTotal = parseFloat(lineTotal[i].innerHTML)
+    budgetTotal.innerHTML = "$" + grandTotal.toFixed(2)
+    // budgetTotal.innerHTML
+  }
+}
+
+for (let i = 0; i < stopSelect.length; i++) {
+  stopSelect[i].addEventListener("click",displayStopInfo)
+  function displayStopInfo() {
+    var stopInfo = document.getElementsByClassName("stop-info");
+    if (stopInfo[i].style.display==="none"){
+    stopInfo[i].style.display="block"
+    }
+    else {
+      stopInfo[i].style.display="none"
+    }
+  }
 }
 
 

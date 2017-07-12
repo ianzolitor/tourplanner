@@ -4,10 +4,22 @@
   height: 50vw;
   background-color: grey; }
 
+h1 {
+  font-size: 52px;
+  font-weight: bold; }
+
+.signin, .signup {
+  border-radius: 25px;
+  background-color: #96858D;
+  padding: 50px;
+  margin: 50px;
+  color: #FFF6FC; }
+
 body {
   font-family: "futura";
   text-align: center;
-  background-color: rgba(166, 194, 210, 0.29); }
+  background-color: #D5D5D5;
+  color: #5D5D5D; }
 
 .finalize-stop-div {
   display: none; }
@@ -45,5 +57,28 @@ body {
 #budget-total {
   text-align: right;
   font-size: 28px; }
+
+.profile-name {
+  font-size: 42px; }
+
+.user-tour {
+  display: inline-block;
+  background-color: #96858D;
+  padding: 50px;
+  font-size: 32px;
+  font-weight: bold;
+  border: 2px solid black; }
+
+.user-tour a {
+  color: #FFF6FC; }
+
+.create-new-tour {
+  display: inline-block;
+  background-color: #96858D;
+  color: #FFF6FC;
+  padding: 20px;
+  font-style: oblique;
+  font-size: 22px;
+  border: 2px solid black; }
 
 /*# sourceMappingURL=styles.css.map */

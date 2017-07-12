@@ -1,9 +1,43 @@
+h1{
+  font-size: 52px;
+  // font-style: italic;
+  font-weight: bold;
+}
+
+
+.signin, .signup  {
+  border-radius: 25px;
+  background-color: #96858D;
+  padding: 50px;
+  margin:50px;
+  color: #FFF6FC;
+
+
+}
+
+
+
 body{
 
   font-family:"futura";
   text-align: center;
-  background-color: rgba(166, 194, 210, 0.29);
+  background-color: #D5D5D5;
+  color: #5D5D5D
 }
+
+// .parallax {
+//     /* The image used */
+//     background-image: url("img_parallax.jpg");
+//
+//     /* Full height */
+//     height: 100%;
+//
+//     /* Create the parallax scrolling effect */
+//     background-attachment: fixed;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
 
 
 // .main-container {
