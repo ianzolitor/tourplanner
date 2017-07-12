@@ -1,3 +1,58 @@
+.tour-name h2{
+  font-size: 48px;
+  border-radius: 25px;
+  background-color: #96858D;
+  padding: 50px;
+  margin:75px;
+  color: #FFF6FC;
+
+}
+
+.add-stop {
+  margin-top:50px;
+  margin-bottom: 75px;
+}
+
+#add-stop-submit {
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  border:none;
+  width:200px;
+  height: 100px;
+  font-size: 32px;
+  font-weight: bold;
+  color:#5D5D5D
+}
+
+.tour-stops {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.tour-stops button {
+  border-radius: 25px;
+  background-color: #9099A2;
+  border:none;
+  width:120px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  margin:10px;
+  color: #5D5D5D;
+}
+
+.stop-info {
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  padding:10px;
+  background-color: #9099A2;
+  color:#5D5D5D;
+}
+
+
+
+
 .budget-container {
   margin:0 auto;
   width:75vw;
