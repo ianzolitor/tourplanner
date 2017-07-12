@@ -12,7 +12,7 @@
 
 <div class="add-stop">
   <form class="new stop" action="/tour/<%=@tour.id %>/new_stop" method="get">
-    <input type="submit" id="add-stop-submit" value="Add A Stop" >
+    <input type="submit" id="add-stop-submit" value="Click To Add A Stop" >
   </form>
 </div>
 
@@ -31,6 +31,8 @@
 
 
 <div class="map-venue-name" style= "display:none">
+<%= stop.city %>
+<br>
 <%= Venue.find(stop.venue_id).name %>
 
 </div>
@@ -51,7 +53,10 @@
 <br>
 <br>
 
-<h3><%= @tour.name %> Budget</h3>
+<div class="budget-name">
+  <h3><%= @tour.name %> Budget</h3>
+</div>
+
 <div class="budget-container">
 <% @tour.stops.each do |stop| %>
 <div class="budget-line">
