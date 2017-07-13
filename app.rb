@@ -3,9 +3,8 @@ require 'json'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'google_places'
+require './environments'
 
-
-set :database, 'sqlite3:sinatraapi.sqlite3'
 set :sessions, true
 
 require './models'
