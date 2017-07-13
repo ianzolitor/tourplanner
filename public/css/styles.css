@@ -5,6 +5,9 @@
   background-color: grey; }
 
 h1 {
+  background-color: #6E7A94;
+  color: #FFF6FC;
+  border-radius: 25px;
   font-size: 52px;
   font-weight: bold; }
 
@@ -131,6 +134,7 @@ body {
   color: #5D5D5D; }
 
 .stop-info {
+  display: inline-block;
   border-radius: 25px;
   font-size: 20px;
   font-weight: bold;

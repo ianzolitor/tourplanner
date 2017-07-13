@@ -16,12 +16,7 @@ var chosenVenue;
 var chosenlodging;
 
 
-
-
-
 stopVenueSubmit.addEventListener("click", searchVenue)
-
-
 
 
 function searchVenue() {

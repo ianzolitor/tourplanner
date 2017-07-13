@@ -16,13 +16,13 @@
   </form>
 </div>
 
-
+<h2 class="eachstop">Click For Stop Info</h2>
 <% @tour.stops.each do |stop| %>
 
 
 
 <div class="tour-stops">
-  <button type="button" class = "stop-select" value= "<%= stop.id %>"> <%= stop.city %></button>
+  <button type="button" class = "stop-select" value= "<%= stop.id %>">Stop <%= stop.id %> <%= stop.city %></button>
   <div class="stop-info" style= "display:none">
     <div>Playing at <a href="<%= Venue.find(stop.venue_id).website %>" target="_blank"><%=Venue.find(stop.venue_id).name %> </a> for $<%=Venue.find(stop.venue_id).pay %></div>
     <div>Staying at <a href=" <%= Lodging.find(stop.lodging_id).website %> " target="_blank"> <%=Lodging.find(stop.lodging_id).name %></a> costing $<%=Lodging.find(stop.lodging_id).cost %> a night </div>
